@@ -293,6 +293,7 @@ try
             qy0 = exp(bsxfun(@minus, log_qy, mean(log_qy, 2)));
             qy0(isinf(qy0)) = 1/eps;
             qy0(qy0 == 0) = eps;
+            qy0(qy0 ~= qy0) = 1;
 
             % calculate expectation value of y(m) under q(y)
             %
